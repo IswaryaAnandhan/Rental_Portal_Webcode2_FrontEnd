@@ -34,7 +34,7 @@ function Contact() {
         /></div> 
           <div className="col-lg-6">
           <form onSubmit={formik.handleSubmit} className="col-lg-8">
-            <label>Your Name</label>
+            <label>Name</label>
             <input
               type="text"
               name="Name"

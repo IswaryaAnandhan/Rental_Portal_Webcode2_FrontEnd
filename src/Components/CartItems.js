@@ -24,7 +24,11 @@ function CartItems() {
     }
     cartitems.setCartItems([...a]);
   };
-
+  let removeFromCart = (id) =>{
+    const indexVal= a.findIndex(obj => obj._id === id);
+    a.splice(indexVal,1);
+    cartitems.setCartItems([...a])
+   }
   var total = cartitems.CartItems.reduce((acc, curr) => {
     return (acc = acc + curr.price * curr.quantity * curr.hours);
   }, 0);
@@ -117,6 +121,14 @@ function CartItems() {
                   </div>
                 </td>
                 <td>{item.price * item.quantity * item.hours}</td>
+                <button
+                    onClick={() => {
+                      removeFromCart(item);
+                    }}
+                    className="badge bg-primary rounded-pill mt-5"
+                  >
+                    X
+                  </button>
               </tr>
             );
           })}

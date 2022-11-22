@@ -15,7 +15,7 @@ function ProductCard({ item }) {
     setcart([...CartItem]);
   };
   return (
-    <div className="col-lg-4">
+    <div className="col-lg-4 mt-4">
       <div className="card" style={{ width: "18em" }}>
         <img
           className="card-img-top"

@@ -31,12 +31,12 @@ function Topbar() {
                 </Link>
               </li>
               <li className="nav-item" style={{ textDecoration: "none" }}>
-                <Link id="link4" to={"/Products"} className="nav-link">
+                <Link id="link1" to={"/Products"} className="nav-link">
                   Products
                 </Link>
               </li>
               <li className="nav-item" style={{ textDecoration: "none" }}>
-                <Link id="link2" to={"/CartItems"} className="nav-link">
+                <Link id="link1" to={"/CartItems"} className="nav-link">
                   Cart Items
                 </Link>
               </li>

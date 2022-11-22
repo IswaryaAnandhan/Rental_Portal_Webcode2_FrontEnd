@@ -1,6 +1,7 @@
 
-import './App.css';
+
 import "./sb-admin-2.min.css";
+import "./style.css"
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import Topbar from './Components/Topbar';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
