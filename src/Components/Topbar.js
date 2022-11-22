@@ -13,8 +13,8 @@ className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-targe
 <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
   <div className="navbar-nav">
   <li className="nav-item" style={{textDecoration: "none"}}><Link id="link1" to={"/"}  className="nav-link">Home</Link></li> 
-    <li className="nav-item" style={{textDecoration: "none"}}><Link id="link2" to={"/CartItems"}  className="nav-link">Cart Items</Link></li>
     <li className="nav-item" style={{textDecoration: "none"}}><Link id="link4" to={"/Products"}  className="nav-link">Products</Link></li>
+    <li className="nav-item" style={{textDecoration: "none"}}><Link id="link2" to={"/CartItems"}  className="nav-link">Cart Items</Link></li>
   </div>
 </div>
 </div>
