@@ -93,23 +93,24 @@ function CartItems() {
                 </td>
                 <td>{item.hours}</td>
                 <td>
-                  <div className="ms-2 me-auto">
-                    <div className="input-group ms-2">
+                  <div className="row">
+                    <div className="col-lg-2">
                       <button
-                        className="input-group-text"
+                        className="ml-3 btn btn-primary rounded-circle"
                         onClick={() => {
                           removeItems(item._id);
                         }}
                       >
                         -
                       </button>
-                  
-                    <div className="form-control text-center">
-                      {item.quantity}
                     </div>
-                   
+                    <div className="text-center col-lg-3">
+                      <span>{item.quantity}</span>
+                    </div>
+
+                    <div className="col-lg-2">
                       <button
-                        className="input-group-text"
+                        className="me-3 btn btn-primary rounded-circle"
                         onClick={() => {
                           addItems(item._id);
                         }}
