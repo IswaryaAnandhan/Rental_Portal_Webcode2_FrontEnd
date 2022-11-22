@@ -124,7 +124,7 @@ function CartItems() {
       </table>
 
       <h3>Total Amount:{total}</h3>
-      <button onClick={finalOrder} className="btn btn-primary">
+      <button onClick={finalOrder} className="btn btn-primary sm-1">
         Place Order
       </button>
     </div>

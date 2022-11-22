@@ -10,29 +10,29 @@ function Home() {
   return (
     <div>
       <div className="col-lg-12 align-middle">
-        <h1 className="text-center" style={{ color: "skyblue", marginTop: "20px" }}>
+        <h1 className="text-center" style={{ color: "blue", marginTop: "40px" }}>
           Welcome to our Rental Portal
         </h1>
-        <h6 className="text-center">
+        <h4 className="text-center">
           You can Experience the new world by low cost
-        </h6>
-        <p className="text-center">
+        </h4>
+        <h6 className="text-center">
           Products we provide
           <br />
-          Iphone,Dslr Cameras,Speaker,Bikes
-        </p>
+          Iphone,Cameras,Speaker,Bikes....
+        </h6>
       </div>
       <div className="col-lg-12 text-center mt-5">
         <button
           type="button"
           class="btn btn-outline-primary  btn-lg"
           onClick={products}
-          style={{ marginTop: "80px" }}
+          style={{ marginTop: "40px" }}
         >
           Select Products
         </button>
       </div>
-      <div className="col-lg-12" style={{ marginTop: "120px" }}>
+      <div className="col-lg-12" style={{ marginTop: "100px" }}>
         <Contact />
       </div>
     </div>
