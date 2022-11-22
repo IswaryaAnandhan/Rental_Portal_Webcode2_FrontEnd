@@ -1,10 +1,9 @@
-import logo from './logo.svg';
+
 import './App.css';
 import "./sb-admin-2.min.css";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import Topbar from './Components/Topbar';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Launch from './Components/Home';
 import Products from './Components/Products';
 import CartItems from './Components/CartItems';
 import Home from './Components/Home';

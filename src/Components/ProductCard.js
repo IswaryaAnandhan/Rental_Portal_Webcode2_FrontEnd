@@ -1,7 +1,5 @@
 import axios from "axios";
 import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
-
 import { Config } from "./Config";
 import { UserContext } from "./Context";
 
@@ -15,7 +13,6 @@ function ProductCard({ item }) {
     let addproduct = product.data;
     CartItem.push(addproduct);
     setcart([...CartItem]);
-    console.log(CartItem);
   };
   return (
     <div className="col-lg-4">
@@ -23,15 +20,15 @@ function ProductCard({ item }) {
         <img
           className="card-img-top"
           src={item.image}
-          alt="Card image cap"
-          width={"100px"}
+          alt="Product image"
+          width={"80px"}
           height="200px"
         />
         <div className="card-body">
           <h5 className="card-title">Name : {item.name}</h5>
           <p className="card-text">Price/Hr : {item.price}</p>
           <button
-            className="btn btn-warning"
+            className="btn btn-primary"
             disabled={CartItem.some((obj) => obj._id == item._id)}
             onClick={() => {
               Add(item._id);

@@ -10,7 +10,7 @@ function Home() {
   return (
     <div>
       <div className="col-lg-12 align-middle">
-        <h1 className="text-center" style={{ color: "skyblue" }}>
+        <h1 className="text-center" style={{ color: "skyblue", marginTop: "20px" }}>
           Welcome to our Rental Portal
         </h1>
         <h6 className="text-center">
@@ -25,15 +25,14 @@ function Home() {
       <div className="col-lg-12 text-center mt-5">
         <button
           type="button"
-          class="btn btn-outline-warning  btn-lg"
+          class="btn btn-outline-primary  btn-lg"
           onClick={products}
-          style={{ marginTop: "150px" }}
+          style={{ marginTop: "80px" }}
         >
-          {" "}
           Select Products
         </button>
       </div>
-      <div className="col-lg-12" style={{ marginTop: "200px" }}>
+      <div className="col-lg-12" style={{ marginTop: "120px" }}>
         <Contact />
       </div>
     </div>

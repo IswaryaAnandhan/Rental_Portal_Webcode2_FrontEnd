@@ -1,16 +1,10 @@
-import axios from "axios";
-import { Formik, useFormik } from "formik";
 import React, { useContext, useState } from "react";
 import { UserContext } from "./Context";
-import { Config } from './Config';
 import Calendar from "./Calendar";
-
 
 function CartItems() {
   const cartitems = useContext(UserContext);
   let a = cartitems.CartItems;
-
-
 
   let addItems = (id) => {
     console.log(id);
@@ -30,60 +24,58 @@ function CartItems() {
     }
     cartitems.setCartItems([...a]);
   };
-  console.log(cartitems);
 
   var total = cartitems.CartItems.reduce((acc, curr) => {
-    return (acc = acc + curr.price * curr.quantity *curr.hours);
+    return (acc = acc + curr.price * curr.quantity * curr.hours);
   }, 0);
-  
 
-  const [amount,setAmount]=useState();
+  const [amount, setAmount] = useState();
 
-  const finalOrder=(e)=>{
-    
+  const finalOrder = (e) => {
     setAmount(total);
     console.log(amount);
     e.preventDefault();
-    if(total==""){alert("please add items to cart")}
-    else{
+    if (total == "") {
+      alert("please add items to cart");
+    } else {
       var options = {
-        key :"rzp_test_LclmW435wRbISo",
-        key_secret:"USe8Ksd02FiuTSx8FDZ10vVY",
-        amount: total *100,
+        key: "rzp_test_LclmW435wRbISo",
+        key_secret: "USe8Ksd02FiuTSx8FDZ10vVY",
+        amount: total * 100,
         currency: "INR",
-        name:"webcode",
-        description:"testing purpose",
-        handler : function(response){
-          alert(response.razorpay_payment_id)
+        name: "Equipment Rental Portal",
+        description: "testing purpose",
+        handler: function (response) {
+          alert(response.razorpay_payment_id);
         },
-        prefill:{
-          name:"manivasagam",
-          email:"s.kishore123.64@gmail.com",
-          contact:"9566991210"
+        prefill: {
+          name: "Anandhan Iswarya",
+          email: "aishwariyaanandhan@gmail.com",
+          contact: "8778218366",
         },
-        notes:{
-          address:"Razor Corporate office"
+        notes: {
+          address: "Razor Corporate office",
         },
-        theme : {
-          color:"#3399cc"
-        }
+        theme: {
+          color: "#3399cc",
+        },
       };
       var pay = new window.Razorpay(options);
       pay.open();
     }
-  }
+  };
 
   return (
     <div className="container">
-      <table class="table table-dark">
+      <table class="table">
         <thead>
           <tr>
             <th scope="col">Product</th>
-            <th scope="col">price</th>
-            <th scope="col">days</th>
+            <th scope="col">Price</th>
+            <th scope="col">Days</th>
             <th scope="col">Total Hours</th>
-            <th scope="col">quantity</th>
-            <th scope="col">Total</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Total Amount</th>
           </tr>
         </thead>
         <tbody>
@@ -93,37 +85,48 @@ function CartItems() {
                 <td>{item.name}</td>
                 <td>{item.price}</td>
                 <td>
-                  <Calendar id={item._id} ></Calendar>
+                  <Calendar id={item._id}></Calendar>
                 </td>
                 <td>{item.hours}</td>
                 <td>
-                  <button
-                    className="me-3 btn btn-warning"
-                    onClick={() => {
-                      addItems(item._id);
-                    }}
-                  >
-                    +
-                  </button>
-                  <span>{item.quantity}</span>
-                  <button
-                    className="ml-3 btn btn-warning"
-                    onClick={() => {
-                      removeItems(item._id);
-                    }}
-                  >
-                    -
-                  </button>
+                  <div className="row">
+                    <div className="col-lg-2">
+                      <button
+                        className="ml-3 btn btn-primary rounded-circle"
+                        onClick={() => {
+                          removeItems(item._id);
+                        }}
+                      >
+                        -
+                      </button>
+                    </div>
+                    <div className="text-center col-lg-3">
+                      <span>{item.quantity}</span>
+                    </div>
+
+                    <div className="col-lg-2">
+                      <button
+                        className="me-3 btn btn-primary rounded-circle"
+                        onClick={() => {
+                          addItems(item._id);
+                        }}
+                      >
+                        +
+                      </button>
+                    </div>
+                  </div>
                 </td>
-                <td>{item.price * item.quantity*item.hours}</td>
+                <td>{item.price * item.quantity * item.hours}</td>
               </tr>
             );
           })}
         </tbody>
       </table>
 
-      <h3  >Total Rs = {total}</h3>
-      <button onClick={finalOrder} className="btn btn-warning">Place Order</button>
+      <h3>Total Amount:{total}</h3>
+      <button onClick={finalOrder} className="btn btn-primary">
+        Place Order
+      </button>
     </div>
   );
 }
