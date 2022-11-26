@@ -1,4 +1,4 @@
-Admin Login:
+<b>Admin Login:<b/>
 
 Email: admin@gmail.com
 <br/>
