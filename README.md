@@ -1,5 +1,5 @@
 <b>Admin Login:<b/>
-
+This is for sample use and testing,After testing I change Admin user: email and password
 Email: admin@gmail.com
 <br/>
 Password: admin123
