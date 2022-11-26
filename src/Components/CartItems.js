@@ -43,8 +43,8 @@ function CartItems() {
       alert("please add items to cart");
     } else {
       var options = {
-        key: "rzp_test_LclmW435wRbISo",
-        key_secret: "USe8Ksd02FiuTSx8FDZ10vVY",
+        key: "rzp_test_Q51pVUzmKsgkgl" ,
+        key_secret: "yJRE1qewcRkI1qhv9ZXKp8KM",
         amount: total * 100,
         currency: "INR",
         name: "Equipment Rental Portal",

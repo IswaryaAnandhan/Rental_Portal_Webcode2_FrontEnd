@@ -8,7 +8,33 @@ function Contact() {
     initialValues: {
       Name: "",
       Email: "",
+      Message:"",
       PhNo: "",
+    },
+    validate: (values) => {
+      let error = {};
+      if (!values.Name) {
+        error.Name = "Please enter your Name";
+      }
+
+      if (!values.Email) {
+        error.Email = "Please enter the email id";
+      } else if (
+        !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.Email)
+      ) {
+        error.Email = "Invalid email address";
+      }
+
+      if (!values.Message) {
+        error.Message = "Please enter your Message";
+      }
+
+      
+      if (values.PhNo.toString().length !== 10) {
+        error.PhNo = "Please enter the valid Phone number";
+      }
+
+      return error;
     },
     onSubmit: async (values) => {
       let contact = await axios.post(`${Config.api}/Contacts`, values);
@@ -38,32 +64,91 @@ function Contact() {
             <input
               type="text"
               name="Name"
-              className="form-control"
+              className={`form-control form-control-user ${
+                formik.touched.Name && formik.errors.Name
+                  ? "error-box"
+                  : ""
+              } ${
+                formik.touched.Name && !formik.errors.Name
+                  ? "success-box"
+                  : null
+              }`}
               onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
               value={formik.values.Name}
               placeholder="Enter your name"
-              required
+ 
             />
+                 {formik.touched.Name && formik.errors.Name ? (
+                <span style={{ color: "red" }}>{formik.errors.Name}</span>
+              ) : null}
             <br /> <label>Email</label>
             <input
               type="email"
               name="Email"
-              className="form-control"
+              className={`form-control form-control-user ${
+                formik.touched.Email && formik.errors.Email
+                  ? "error-box"
+                  : ""
+              } ${
+                formik.touched.Email && !formik.errors.Email
+                  ? "success-box"
+                  : null
+              }`}
               onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
               value={formik.values.Email}
               placeholder="Enter your email Id"
-              required
+
             />
-            <br /> <label>Phone No</label>
+                 {formik.touched.Email && formik.errors.Email ? (
+                <span style={{ color: "red" }}>{formik.errors.Email}</span>
+              ) : null}
+            <br />
+            <label>Message</label>
+            <input
+              type="text"
+              name="Message"
+              className={`form-control form-control-user ${
+                formik.touched.Message && formik.errors.Message
+                  ? "error-box"
+                  : ""
+              } ${
+                formik.touched.Message && !formik.errors.Message
+                  ? "success-box"
+                  : null
+              }`}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              value={formik.values.Message}
+              placeholder="Enter your Message"
+            /> 
+                 {formik.touched.Message && formik.errors.Message ? (
+              <span style={{ color: "red" }}>{formik.errors.Message}</span>
+            ) : null}  
+            <br />
+             <label>Phone No</label>
             <input
               type="text"
               name="PhNo"
-              className="form-control"
+              className={`form-control form-control-user ${
+                formik.touched.PhNo && formik.errors.PhNo
+                  ? "error-box"
+                  : ""
+              } ${
+                formik.touched.PhNo && !formik.errors.PhNo
+                  ? "success-box"
+                  : null
+              }`}
               onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
               value={formik.values.PhNo}
               placeholder="Enter your Phone number"
-              required
+  
             />
+                 {formik.touched.PhNo && formik.errors.PhNo ? (
+                <span style={{ color: "red" }}>{formik.errors.PhNo}</span>
+              ) : null}
             <br />
             <button type="submit" className="btn btn-primary">
               Submit

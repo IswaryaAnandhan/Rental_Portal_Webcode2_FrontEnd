@@ -40,6 +40,11 @@ function Topbar() {
                   Cart Items
                 </Link>
               </li>
+              <li className="nav-item" style={{ textDecoration: "none" }}>
+                <Link id="link1" to={"/login"} className="nav-link">
+                 Admin Login
+                </Link>
+              </li>
             </div>
           </div>
         </div>

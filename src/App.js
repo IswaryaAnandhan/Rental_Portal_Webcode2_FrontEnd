@@ -8,19 +8,27 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Products from './Components/Products';
 import CartItems from './Components/CartItems';
 import Home from './Components/Home';
+import Login from "./Components/Login";
+import PortalLayout from "./Components/PortalLayout";
+import AddProduct from "./Components/AddProduct";
+import CreateProduct from "./Components/CreateProduct";
+import EditProduct from "./Components/EditProduct";
 
 function App() {
   return (
     <div className="container">
    <BrowserRouter>
    <div className="row">
-        <div className="col-lg-12">
-          <Topbar/>
-          </div>
           <Routes>
-          <Route path="/" element={<Home/>}/>
+          <Route path="/" element={<PortalLayout />}>
+          <Route path="/" element={<Home/>}/>      
           <Route path="/Products" element={<Products/>}/>
-          <Route path="/CartItems" element={<CartItems/>}/>
+          <Route path="/CartItems" element={<CartItems/>}/>   
+          <Route path="/login" element={<Login/>}/>
+          </Route>
+          <Route path="/addproduct" element={<AddProduct/>}/>
+          <Route path="/create-product" element={<CreateProduct/>}/>
+          <Route path="/edit-product/:id" element={<EditProduct/>}/>
           </Routes>
           </div>
    </BrowserRouter>
