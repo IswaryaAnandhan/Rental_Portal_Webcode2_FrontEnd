@@ -1,3 +1,12 @@
+<b>Admin Login:<b/>
+  <hr/>
+  <br/>
+This is for sample use and testing,After testing I can change Admin user: email and password
+  <br/>
+Email: admin@gmail.com
+<br/>
+Password: admin123
+<hr/>
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
