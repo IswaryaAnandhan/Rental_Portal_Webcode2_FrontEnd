@@ -1,7 +1,8 @@
 Admin Login:
 
 Email: admin@gmail.com
-Password:admin123
+<br/>
+Password: admin123
 
 # Getting Started with Create React App
 
