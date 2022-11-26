@@ -1,7 +1,7 @@
 <b>Admin Login:<b/>
   <hr/>
   <br/>
-This is for sample use and testing,After testing I change Admin user: email and password
+This is for sample use and testing,After testing I can change Admin user: email and password
   <br/>
 Email: admin@gmail.com
 <br/>
