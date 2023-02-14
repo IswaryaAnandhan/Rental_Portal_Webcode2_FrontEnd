@@ -1,4 +1,4 @@
 export const Config={
     // api:"http://localhost:3006"
-    api:"https://equipmentrentalportal.herokuapp.com"
+    api:"https://equipment-rental-portal.onrender.com/"
 }
