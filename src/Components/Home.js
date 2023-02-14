@@ -11,7 +11,7 @@ function Home() {
     <div>
       <div className="col-lg-12 align-middle">
         <h1 className="text-center" style={{ color: "blue", marginTop: "40px" }}>
-          Welcome to our Rental Portal
+          Welcome to our Equipment Rental Portal
         </h1>
         <h4 className="text-center">
           You can Experience the new world by low cost
