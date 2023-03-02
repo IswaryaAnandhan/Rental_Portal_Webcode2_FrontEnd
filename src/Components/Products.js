@@ -18,13 +18,13 @@ function Products() {
   }
   return (
     <div className='container'>
-       <div>  {isLoading? <Loading/>:""}</div>
     <div className='row'>
-      {
+    {isLoading? <Loading/>:<>{
         product.map((items)=>{
           return <ProductCard item={items}/>
         })
-      }
+      }</>}
+      
     </div>
     </div>
   )

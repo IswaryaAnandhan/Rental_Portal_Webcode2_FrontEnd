@@ -30,7 +30,7 @@ function AddProduct() {
       const pIndex = productList.findIndex((p) => p.id == id);
       productList.splice(pIndex, 1);
       setProductList([...productList]);
-      alert("deleted Successfully");
+      alert("Deleted Successfully");
     } catch (error) {
       alert("something went wrong");
     }
