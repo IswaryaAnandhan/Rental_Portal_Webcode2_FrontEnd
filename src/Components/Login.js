@@ -1,11 +1,14 @@
 import axios from "axios";
 import { useFormik } from "formik";
-import React from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Config } from './Config'
+import Loading from "./Loading";
 
 function Login() {
   const navigate = useNavigate();
+  const [isLoading, setLoading] = useState(false);
+ 
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -29,14 +32,18 @@ function Login() {
     },
     onSubmit: async (values) => {
       try {
+        setLoading(true);
         const user = await axios.post(`${Config.api}/admin/login`, values);
         localStorage.setItem("myreact", user.data.token);
         if (user.data.message === "Success") {
+          setLoading(false);
           navigate("/addproduct");
           alert("Successfully Logged in");
+        
         }else {
           alert("Incorrect email/password" );
         }
+     
       } catch (error) {
         console.log(error.response.data.message);
         alert(error.response.data.message);
@@ -58,6 +65,7 @@ function Login() {
             <div className="col-lg-7">
               <div className="p-5">
                 <div className="text-center">
+                  <div>  {isLoading? <Loading/>:""}</div>
                   <h1 className="h4 text-gray-900 mb-4">Admin Login!!</h1>
                 </div>
                 <form className="user" onSubmit={formik.handleSubmit}>

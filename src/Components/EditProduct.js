@@ -6,6 +6,7 @@ import { Config } from './Config'
 
 function EditProduct() {
   let navigate=useNavigate();
+  const [isLoading, setLoading] = useState(false);
     let params=useParams()
     
   useEffect(() => {
@@ -49,10 +50,12 @@ function EditProduct() {
         },
     onSubmit: async (values) => {
       try {
+        setLoading(true);
         await axios.put(
           `${Config.api}/Products/${params.id}`,
           values
         );
+        setLoading(false);
         alert("Modified Successfully");
         navigate('/addproduct')
       } catch (error) {

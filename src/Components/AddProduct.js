@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Config } from './Config';
+import Loading from "./Loading";
 
 function AddProduct() {
   const [productList, setProductList] = useState([]);
@@ -12,8 +13,8 @@ function AddProduct() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const products = await axios.get(`${Config.api}/Products`);  
-        setLoading(true);      
+        setLoading(true);   
+        const products = await axios.get(`${Config.api}/Products`);    
         setProductList(products.data);
         setLoading(false);
       } catch (error) {
@@ -59,11 +60,7 @@ function AddProduct() {
           </div>
         <button className='btn btn-danger' onClick={logout}>Logout</button>
       </div>
-      {isLoading ? (
-        <div class="spinner-border" role="status">
-          <span class="sr-only">Loading...</span>
-        </div>
-      ) : (
+      {isLoading ?<Loading/> : (
         <div className="card shadow mb-4">
           <div className="card-body">
             <div className="table-responsive">

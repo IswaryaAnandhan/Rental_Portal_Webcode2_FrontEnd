@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./header.css";
+import "bootstrap";
+
 
 function Topbar() {
 
@@ -26,22 +27,22 @@ function Topbar() {
           <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div className="navbar-nav">
               <li className="nav-item" style={{ textDecoration: "none" }}>
-                <Link id="link1" to={"/"} className="nav-link">
+                <Link id="link" to={"/"} className="nav-link">
                   Home
                 </Link>
               </li>
               <li className="nav-item" style={{ textDecoration: "none" }}>
-                <Link id="link1" to={"/Products"} className="nav-link">
+                <Link id="link" to={"/Products"} className="nav-link">
                   Products
                 </Link>
               </li>
               <li className="nav-item" style={{ textDecoration: "none" }}>
-                <Link id="link1" to={"/CartItems"} className="nav-link">
+                <Link id="link" to={"/CartItems"} className="nav-link">
                   Cart Items
                 </Link>
               </li>
               <li className="nav-item" style={{ textDecoration: "none" }}>
-                <Link id="link1" to={"/login"} className="nav-link">
+                <Link id="link" to={"/login"} className="nav-link">
                  Admin Login
                 </Link>
               </li>
