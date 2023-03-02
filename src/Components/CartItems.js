@@ -50,8 +50,8 @@ function CartItems() {
         name: "Equipment Rental Portal",
         description: "testing purpose",
         handler: function (response) {
-          alert(response.razorpay_payment_id);
-          alert("your order placed successfully")
+          alert(response.razorpay_payment_id)
+          alert("We have received your order and will reach out to you by phone shortly.")
         },
         prefill: {
           name: "",
