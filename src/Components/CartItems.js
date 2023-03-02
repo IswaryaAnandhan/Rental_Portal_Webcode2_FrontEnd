@@ -51,11 +51,12 @@ function CartItems() {
         description: "testing purpose",
         handler: function (response) {
           alert(response.razorpay_payment_id);
+          alert("your order placed successfully")
         },
         prefill: {
-          name: "Anandhan Iswarya",
-          email: "aishwariyaanandhan@gmail.com",
-          contact: "8778218366",
+          name: "",
+          email: "",
+          contact: "",
         },
         notes: {
           address: "Razor Corporate office",
