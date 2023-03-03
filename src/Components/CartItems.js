@@ -52,6 +52,7 @@ function CartItems() {
         handler: function (response) {
           alert(response.razorpay_payment_id)
           alert("We have received your order and will reach out to you by phone shortly.")
+          removeFromCart();
         },
         prefill: {
           name: "",
