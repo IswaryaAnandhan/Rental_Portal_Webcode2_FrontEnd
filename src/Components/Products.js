@@ -11,10 +11,14 @@ function Products() {
     Prod()
   },[])
   let Prod=async()=>{
+    try {
     setLoading(true);
-    let prods = await axios.get(`${Config.api}/ProductsList`)
+    let prods = await axios.get(`${Config.api}/Products`)
     setProduct(prods.data);
     setLoading(false);
+    } catch (error) {
+      alert("something went wrong");
+    }
   }
   return (
     <div className='container'>
