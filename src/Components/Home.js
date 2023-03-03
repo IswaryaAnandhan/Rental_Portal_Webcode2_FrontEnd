@@ -1,12 +1,7 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 import Contact from "./Contact";
 
 function Home() {
-  const navigate = useNavigate();
-  let products = () => {
-    navigate("/Products");
-  };
   return (
     <div>
       <div className="col-lg-12 align-middle">
@@ -17,22 +12,15 @@ function Home() {
           You can Experience the new world by low cost
         </h4>
         <h6 className="text-center">
-          Products we provide
+          Rental Products we provide
           <br />
-          Iphone,Cameras,Speaker,Bikes....
+          Car,Van,Auto,Cameras,Speaker,Bikes,Iphone,....
         </h6>
       </div>
       <div className="col-lg-12 text-center mt-5">
-        <button
-          type="button"
-          class="btn btn-outline-primary  btn-lg"
-          onClick={products}
-          style={{ marginTop: "40px" }}
-        >
-          Select Products
-        </button>
+        <img className="equip" src="../image/equipment.jpg" alt="equip"/>       
       </div>
-      <div className="col-lg-12" style={{ marginTop: "100px" }}>
+      <div className="col-lg-12" style={{ marginTop: "50px" , marginBottom:"50px" }}>
         <Contact />
       </div>
     </div>

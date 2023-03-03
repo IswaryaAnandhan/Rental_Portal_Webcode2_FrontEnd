@@ -18,7 +18,7 @@ function ProductCard({ item }) {
     <div className="col-lg-4 mt-4">
       <div className="card" style={{ width: "18em" }}>
         <img
-          className="card-img-top"
+          className="card-img"
           src={item.image}
           alt="Product image"
           width={"80px"}

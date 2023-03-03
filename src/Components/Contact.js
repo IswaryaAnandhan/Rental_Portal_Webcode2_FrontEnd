@@ -49,7 +49,7 @@ function Contact() {
         </h3>
         <div className="row">
           <div className="col-lg-2"></div>
-          <div className="col-lg-4 card">
+          <div className="col-lg-4">
             <img
               className="card-img-top"
               src="https://www.internetbling.com/wp-content/uploads/2019/08/contactme.jpg"

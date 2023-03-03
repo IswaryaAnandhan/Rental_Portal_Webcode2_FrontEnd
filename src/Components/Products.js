@@ -24,8 +24,8 @@ function Products() {
     <div className='container'>
     <div className='row'>
     {isLoading? <Loading/>:<>{
-        product.map((items)=>{
-          return <ProductCard item={items}/>
+        product.map((items,index)=>{
+          return <ProductCard key={index} item={items}/>
         })
       }</>}
       
