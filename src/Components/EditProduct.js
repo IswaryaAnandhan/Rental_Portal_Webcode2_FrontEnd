@@ -1,12 +1,11 @@
 import axios from "axios";
 import { useFormik } from "formik";
-import React, { useEffect, useState } from "react";
+import React, { useEffect} from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { Config } from './Config'
 
 function EditProduct() {
   let navigate=useNavigate();
-  const [isLoading, setLoading] = useState(false);
     let params=useParams()
     
   useEffect(() => {
@@ -50,12 +49,10 @@ function EditProduct() {
         },
     onSubmit: async (values) => {
       try {
-        setLoading(true);
         await axios.put(
           `${Config.api}/Products/${params.id}`,
           values
         );
-        setLoading(false);
         alert("Modified Successfully");
         navigate('/addproduct')
       } catch (error) {

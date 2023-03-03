@@ -16,7 +16,7 @@ function ProductCard({ item }) {
   };
   return (
     <div className="col-lg-4 mt-4">
-      <div className="card" style={{ width: "18em" }}>
+      <div className="card card-prod" style={{ width: "18em" }}>
         <img
           className="card-img"
           src={item.image}
