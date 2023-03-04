@@ -11,7 +11,7 @@ function EditProduct() {
   useEffect(() => {
     async function fetchData() {
         try {
-            let user = await axios.get(`${Config.api}/Product/${params.id}`)
+            let user = await axios.get(`${Config.api}/Products/${params.id}`)
             formik.setValues(user.data)
         } catch (error) {
             console.log(error);
